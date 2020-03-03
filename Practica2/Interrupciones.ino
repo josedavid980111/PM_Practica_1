@@ -13,12 +13,17 @@ void setup() {
   EICRA |= (1 << ISC10);
   EIMSK |= (1 << INT1);
   sei();
-  DDRB = DDRB | B00100000; 
+  DDRB = DDRB | B00100010; 
   }
   ISR(INT1_vect)
   {
     contador=contador+1;
     Serial.println(contador);
+    asm(
+      "sbi 0x05,0x01 \n\t"
+      "call tiempo \n\t"
+      "cbi 0x05,0x01 \n\t"
+     );
    }
 
 
