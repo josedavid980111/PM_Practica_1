@@ -1,0 +1,65 @@
+digraph graphname {
+	graph [bb="0,0,275.69,199",
+		compound=True,
+		rank=same,
+		rankdir=LR,
+		ranksep=0.2
+	];
+	node [label="\N"];
+	subgraph cluster___turtle1 {
+		graph [bb="123.69,8,267.69,191",
+			compound=True,
+			label="/turtle1",
+			lheight=0.21,
+			lp="195.69,179.5",
+			lwidth=0.56,
+			rank=same,
+			rankdir=LR,
+			ranksep=0.2,
+			style=bold
+		];
+		t___turtle1__color_sensor		 [URL=topic_3A__turtle1__color_sensor,
+			height=0.5,
+			label="/turtle1/color_sensor",
+			pos="195.69,88",
+			shape=box,
+			tooltip="topic:/turtle1/color_sensor",
+			width=1.7778];
+		t___turtle1__cmd_vel		 [URL=topic_3A__turtle1__cmd_vel,
+			height=0.5,
+			label="/turtle1/cmd_vel",
+			pos="195.69,34",
+			shape=box,
+			tooltip="topic:/turtle1/cmd_vel",
+			width=1.4861];
+		t___turtle1__pose		 [URL=topic_3A__turtle1__pose,
+			height=0.5,
+			label="/turtle1/pose",
+			pos="195.69,142",
+			shape=box,
+			tooltip="topic:/turtle1/pose",
+			width=1.1667];
+	}
+	n___turtlesim	 [URL=__turtlesim,
+		height=0.5,
+		label="/turtlesim",
+		pos="57.845,88",
+		shape=ellipse,
+		tooltip="/turtlesim",
+		width=1.2457];
+	t___turtle1__cmd_vel -> n___turtlesim	 [penwidth=1,
+		pos="e,89.249,74.895 146.81,52.1 139.06,55.036 131.15,58.074 123.69,61 115.59,64.179 106.96,67.653 98.709,71.018"];
+	n___turtlesim -> t___turtle1__color_sensor	 [penwidth=1,
+		pos="e,131.45,88 102.98,88 108.82,88 114.91,88 121.06,88"];
+	n___turtlesim -> t___turtle1__pose	 [penwidth=1,
+		pos="e,153.35,126.37 89.249,101.1 100.13,105.58 112.42,110.58 123.69,115 130.12,117.52 136.89,120.13 143.6,122.68"];
+	n___teleop_turtle	 [URL=__teleop_turtle,
+		height=0.5,
+		label="/teleop_turtle",
+		pos="57.845,34",
+		shape=ellipse,
+		tooltip="/teleop_turtle",
+		width=1.6068];
+	n___teleop_turtle -> t___turtle1__cmd_vel	 [penwidth=1,
+		pos="e,142.09,34 115.9,34 121.19,34 126.57,34 131.91,34"];
+}
